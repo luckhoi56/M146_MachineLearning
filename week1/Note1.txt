@@ -1,0 +1,260 @@
+10/1/2018
+
+Machine learning is the algorithm that:
+-improve performance P
+-task T
+-experience E
+
+T: recognizing hand-written work: task is activity that can be recorded.
+P: performance: percentage of words correctly classified
+E: experience: database by human
+
+Example of machine learning application: 
+-Facial recognition, spam email.
+
+*Spam detection:
+-A binary classification task:
+    -assign one of two labels (yes/no) to the input
+-classification requires a model (classifier) to determine which label to assign to items.
+-we wills study algorithm and techiques to learn such models from data.
+
+*Train image classifier, train a model on a small dataset -> deep learning
+
+
+For homework, should use Latex to type (if not write)
+
+
+Textbook: 
+-Learning from data (has video from Caltech)
+
+*Learning:
+Core:
+-understand high level recognition
+-performing knowledge intensive references
+-build adaptive, intelligent system
+-deal with messy, real data
+
+*Multiple purposes:
+-knowledge acquisition
+-integration of various knowledge sources 
+
+-The learner has to be able to classify item it has never seen b4
+
+*Learning = generalization
+-Classification:
+    -Medical diagnosis, credit card application, hand-written letters
+*Planning and active:
+    -navigation game, game playing, driving a car
+*Skills:
+    -balance a pole
+*Common sense reasoning.
+    -language interactions
+
+*Why machine learning:
+-Computer systems with new capabilities
+    -develop system manually too time consuming
+-develop system taht can adapt and customize themselvel to the user experience
+
+*Work in machine learning:
+    -make use stat, linear algebra,calculus
+    -related to philosophy, neurobio.
+
+*Supervised learning:   
+    -Given: labeled training instances
+    -goal: learn mapping that predicts label for test instance.
+
+(continue)
+Given (x1, y1)
+
+
+*Unsupervised learning:
+-Given unlabeled inputs
+-Goal: learn some intrinsic structure in inputs.
+
+*Reinforcement learning:
+-given sequence of states and actions with rewards
+-learn policy that maximizes agent's rewards
+*How to define a reward:
+-define by ratio, rewards functions.
+
+*Framing a learning problem:
+-What is an instance?
+-How is it represented?
+-How our algorithm view the data?
+-Features are the questiions we can ask aboout the instances.
+
+instances               Features                                            Label
+red apples              feat1, feat2, red, round, 3oz                       apples
+green apples            green, no keaf, 4oz                                 apple
+yellow banana           yellow 4oz, sweet, curved                           banana
+green banana            green, curved, sour                                 banana
+
+
+*Learning is about generalizing from training data
+*How to assume about training data test set?
+
+*What is challenges in machine learning?
+    Reprentation:
+        How to represent output / input?
+*What is the right model?
+-depend on the size of data, type of problem, prior knowledge, annotation quality
+-depends on the goal: model size / test-time budget/ accuracy vs speed
+
+
+*Challenges: debugging
+-Debug a program:   
+    -Bugs in implementation:
+        -bug in recurvise computation
+        -bug in recursive call
+        -bug in conditional statement
+*Challenges: structure inference:
+
+10/3/2018*
+The Badge game:
+-Badge was given + or -
+    -What function to assign label?
+*Supervised Learning:
+Given x, we get y = f(x) where f(x) is learned from Example
+
+Give the user D_train, the learner returns model g(x)
+
+labeled
+|
+Test data
+|
+(x'1, y'1)
+|
+(x'2, y'2)
+|
+(x'm, y'm)
+
+We then divide them into 2 groups: raw test data and test labels.
+
+Raw test data -> learnedd model -> predicted label -> test label
+
+Learning the mapping:
+x ( X, y( Y
+An item x is draw from instance space X
+AN item y drawn from label space Y
+
+Find mapping function.
+
+*What are the key question when design a learning system?
+-Modeling:
+    -formulate application problems as machine learning problem
+    -learning protocols.
+
+-Representation:
+    What function should we learn?
+    map raw input to instance space
+-Algo:
+    -What are good algorithm
+    -how to define success
+    -the computational problem
+
+*Using supervised learning
+-What is instance space?
+-What is label space
+-What is hypothesis space
+-what is learning algo we use
+-what is loss function / evaluation metric?
+
+*Input the instance space X:
+x is in featured space.
+    -vector form
+    -can be think as input vector
+
+X as a vector space:
+-X is an N-dimensional vector space
+    -each dimension is a featured
+-each x is a feature vector
+-think of x = [x1,;...] as an
+
+*From features template to vectors
+When design features, think of templates, not by one feature
+-Feature can be boolean, or can be categorical.
+
+Monster problem: features: color, eyes, accessories, book, eyes open
+
+*Output space.
+-y represented in output space (label space)
+-binary classification
+-regressiion
+-structured output
+-multiclassficiation
+
+*Supervised learning examples:
+-Diseases diagnosis:
+    x: properties of patients (symptoms, lab tests)
+    y: disease (regression: percentage of patient can get that disease)
+-Part of speech tagging
+    x: An English sentece ()
+-Face recognition:
+    x: bitmap picture of person Face
+    y: name the person (obama or not, regression: how likely this is a female or a male)
+-Automatic steering:
+    -
+
+*Output space can be compositional:
+    *A learning problem:
+        -x1, x2, x3, x4 -> function -> y = f(x1,x2,x3,x4) 
+    Hypothesis space for 4 features, there are 2^16 = ... possible functions over 4 input features.
+
+    A function g is consistent to a dataset.
+    - since there 7 rows we already know, we left with 2^16 / 2^7 = 2^9 possibilities for f.
+
+*Hypothesis space (2):
+Simple rules: 16 conjunctive rules of the form y= x_i ^ y_j ^ x_k
+
+*Hypothesis space:
+-m of n rules: there are 32 possible rules of the form y =1 <=> at leat m of the following n variable are 1
+
+*Views of learning:
+-Learning is the removal of remaining uncertainty:
+    If we know knew that the unknown function was m-of -n boolean function. We could use the training data to infer which function it is.
+-Learning requires guessing a good, small hypothesis classification
+-Develop flexible hypothesis spaces:
+    -decision trees, neural network, nested collections.
+-develop flexible hypothesis space.
+-develop representation languages for restriced classes of function
+
+*A real world examples:
+{wheter, weather} to laugh or cry?
+-look at a function:
+    F: sentences -> {wheather, weather}. wheater is an adverb, weather is a noun.
+
+-We need to find a domain of this function better.
+
+An example:
+-This is the modeling step
+-What is the hypothesis space?
+    
+*Expressiveness of hypothesis space:
+    -Representation step: What's good/
+-Learning problem:
+    -Find a function that best separates the data
+What function?
+
+*A possibilities: Define the problem to be:
+    A linear function the best separates the data.
+    -linear = linear in the feature space
+    x = data representation, w is the classfier.
+        y = sgn{w^T x}
+*Expressivity - linear classifier
+
+f(x) = sgn(x*w - theta) = sgn(sigma_i[w_i*x_i - theta])
+Major function are linear   
+    -Conjunction:
+        y = x1 ^ x3 ^ x5
+        y = sgn {1 * x1 + 1*x3}
+
+-Many function cannot be represent by linear function.
+example problem.
+
+-w^T*x + b = 0 : on the line
+w, b are the parameters to represent a linear function
+
+*Functions can be made linear:
+-Data are not linearly separable in one dimension
+-not separable if insisting 
+

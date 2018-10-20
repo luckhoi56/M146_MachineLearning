@@ -1,0 +1,13 @@
+*Interpreting probability:
+Two common intpretations for probability are the frequentist interpretation and Baysian interpretation.
+
+*Axiomatic Def
+
+*Conditional probability:
+-Two sets are independednt iff P(A)
+
+*Random variables:
+-random variables are functions that map outcomes to real valued numbers:
+
+*Mean and variance:
+-The mean of a random variable is definded as its expected values

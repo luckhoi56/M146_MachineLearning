@@ -1,0 +1,81 @@
+Geometry and nearest neighbor:
+*Prediction taks as mapping inputs. Decomposing an input into a collection of features. Inputs are nothing more than lists of feature values. This is a geometric view of data. where we have one dimension for every feature. 
+
+Think of a data set as a collection of points in high dimensional space. We can start performing geometric operation on this data.
+
+
+*From data to Feature vectors:
+-To a machine, the features have no meaning. Only the feature values, and how they vary across examples. Mean something to the machine. 
+-Think of an example as being represented by a feature vector consisting of one dimension for each feature, where each dimension is some real value.
+
+-We imposed the convention that for binary featres, the corresponding features values are 0 and 1. This was an arbitrary choice.
+
+-We imposed the convention that for binary features, the corresponding feature values are 0 and 1. 
+-The mapping from feature values to vectors is straighforward in the case of real valued features
+
+-Categorial features with n possible values get mapped to V-many binary indicator features.
+
+We can think of a vector is a high-dimensional feature spae. If you have D-many features (after expanding categorical features), then this feature vector will have D-many components.
+
+3.2 K-nearest neighbors:
+Advantage: It allows us to apply geometric concepts to machine learning. Ex:
+-One of the most basic things is to compute distances. In two-dimensional space, the distance between (2,3) and (6,1) is given by sqrt[(2-6)^2 + (3-1)^2] = sqrt(18).
+
+-If we label the data based on the nearby neighbor, this is called inductive bias.
+
+-The nearest neighbr classifier is build upon this insight. Here is the algorithm:
+    -At training time, we store the entire training set. 
+    -At test time, we get a test example x^.
+    -To predict its label, we find the training example x that is most similar to x^.
+
+-
+
+The nearest neighbor is very prone to overfitting. Since the nearest neighnor algorithm only looks at the single nearest neighbor. It cannot consider this point is probably actually a positive example. It will therefore make error.
+
+*Solution: Consider more than just the single nearest neighbor when making a classification decision. We can consider the K-nearest neighbors and let them vote on the correct class for this test point. If there are 3 points, 2 of them is positive, the other one is negative, the positive will win.
+
+-The first step is to compute the distances from the test point to all training points. The data points are then sorted according to the distance. We then apply trick of summing the class labels for each of the K nearest neighbor and using the SIGN of this sum as our prediction.
+
+-The question is how to choose K. With k K =1, we have overfitting. If K is large, then KNN-predict will always predict the majority class. 
+
+-K is a hyperparameter of the KNN algorithm that allow us to trade-off between overfitting and underfitting.
+
+-One aspect of inductive bias that we have seen in KNN is that it assume nearby points should have the same label.
+-which features are most useful for classification.
+-For all KNN classifier: every feature is used, and they are all used the same amount. If you have data with only a few relevant features, KNN will do poorly.
+-A related issue is feature scale. If x scale is divided oddly compared to y, there is chance the x scale will be ignored
+
+*Decision Boundaries:
+The standard way that we have been thinking about learning algorithm is the query model. 
+-The line separating the two labels are called decision bondary
+
+*Question: What does decision boundaries for decision trees look like? The Idea is to allow the decision tree to ask question about the form.
+
+Now that a decision tree can handle feature vectors, we can talk about decision boundaries.
+
+*K-means clustering:
+    *Unsupervised learning: 
+        -In unsupervised learning problem. our data consists only of examples x_n and does not contain corresponding labels.
+        -Since we are not given any labels for the data, the data points are drawn as black dots.
+
+*Chicken and egg problem:
+-If we knew the clusters, we could compute the centers.
+-To solve this problem, we may need to use iterations: We will start with a guess of the cluster centers. Based on that guess, we will assign each data point to its closest center. We then recompute the cluster centers. We repeat this process until clusters stop moving.
+
+*We are on Page 37 now
+
+*Although K-means is guaranteed to converge and guaranteed  to converge quickly, it is not guaranteed to converge the "right answer". The key problem with unsupervised learning is that we have no way of knowing the right answer.
+
+*Warning:High Dimensions are Scary.
+-With higher dimensionality, we have to worry about computational and mathematical.
+-For K-nearest neighbors, the speed of prediction is slow for a very large data set. We many have to look at every training example every time you want to make a prediction.
+-To speed things up we might want to create an indexing data structure. 
+
+-Instead of considering all training points, you can limit yourself to training points in that grid cell. This can potentially lead to huge computation savings.
+
+-In two dimensions, this procedure is effective. If we want to break space up into a grid whose cells are 0.2 x 0.2, we can clearly do this with 25 grid cells in two dimensions. 
+-Even moderately high dimensions, the amount of computation involved in these problems is enormous
+
+-In general, in D-mensional space, there will be 2^D green hyperspheres of radius one. Each green hypersphere will touch exactly n-many other hypershepheres. The blue hypersheres in the middle will touch them all and will have radius r = squareroot(D) -1
+
+We are on page 39 now

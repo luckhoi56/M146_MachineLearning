@@ -1,0 +1,32 @@
+Chapter 4 : The perceptron
+
+-Learning weights for features amount to learning hyperplane classifier. (a division of space into two halves by a straight line, where one half is positive and one half is negative)
+-the perceptron can be seen as finding a good linear decision boundary
+
+*Bio-inspired learning:
+Based on how much these incoming neurons are firing and how strongly it wants to fire.
+
+-Features with zero weights are ignored. Features with positive weight are indicative of positive examples because they cause the activation to increase.
+-It is good to have a non zero threshold.
+
+#Error-driven updating: the perceptron algorithm.
+-The perceptron is a classic learning algorithm for the neural model of learning.The algorithm is online Instead of considering the entire data set at the same time, it only ever looks at one example. It processes that example and then goes onto the next one. It is also error drivenm as long as it does well, it does not bother to update its parameter.
+
+*Algoritm:
+w_d = 0 for all d = 1...D // initialize weights
+b =0 
+for iter =1 ... Maxiter do
+    for all (x,y) belong to D do:
+        a = sum(w_d*x_d) + b //compute activation for this example
+        if ya <= 0 then
+            w_d = w_d + y_xd for all d =1 ...d
+            b = b + y //update bias
+        end if
+
+    end for
+end for
+return w0,w1,...,w_d,b
+
+-The algorthm maintains a guess at good parameters (weights and bias) as it runs. It process one example 
+---
+

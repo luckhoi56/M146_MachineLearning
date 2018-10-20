@@ -1,0 +1,46 @@
+*traditional programming>
+data, program -> computer ->output (square roor finder)
+output,data -> computer -> program (curve fitting by linear regression)
+
+*Declarative knowledge:
+-Memorization: accumulation of individual facts, time to store facts, memory to store facts
+*Generalization: (Imperative knowledge)
+-deduce new facts from old facts.
+-limited by accuracy of deduction process
+
+*Basic Paradigm:
+Observe set of examples
+-infer something about process that generated that data
+-use inference to make predicitons about previously unseen data: test data
+
+*Supervised: given a set of feature/label pairs, find a rule that predicts the label associated with a previosly unseen input.
+
+*Unsupervised: given a set of feature vectors (without labels) groups them into natural clusters (or create labels for group)
+
+*Clustering examples into groups:
+-Want to decide on similarity of examples, with goal of separating into distince, natural, groups.
+-similarity is distance measure
+
+*Suppose we know there are k different groups in our training data:
+-pick k samples as exemplars
+-cluster remaining samples by minimizing distance.
+
+Scale and scale on the axis
+
+*Issue of concern when learning models:
+
+Learned models will depend on:
+
+-Distance metric between examples 
+-choice of feature vectors
+-contraints of complexity of model:
+    -specified
+
+
+*Batch vs Stochastic Gradient Descent:
+    *Two ways of doing linear regression:
+    -By applying the squared (or absolute) trick at every point in our data one by one, and repeating this process many times
+    -By applying the squared trick at every point in our data all at the same time, and repeating this process many times
+
+The squared (or absolute trick), when applied to a point gives us some values to add to the weights of the model. We can add these values, update our weights and then apply the squared trick on the next point.
+We can also calculate these values for all the points, add them, and update the weights with the sum of these values.
