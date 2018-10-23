@@ -108,7 +108,11 @@ class RandomClassifier(Classifier) :
         
         ### ========== TODO : START ========== ###
         # part b: set self.probabilities_ according to the training set
-        
+        count = 0
+        for elem in y:
+            if (elem ==1):
+                count = count + 1
+        self.probabilities_ = float(count) /len(y)
         ### ========== TODO : END ========== ###
         
         return self
@@ -133,9 +137,11 @@ class RandomClassifier(Classifier) :
         ### ========== TODO : START ========== ###
         # part b: predict the class for each test example
         # hint: use np.random.choice (be careful of the parameters)
-        
-        y = None
-        
+        n, d = X.shape
+        y = []
+        for elem in range(0,n,1):
+            m_result = np.random.choice(2,1, p=[1-self.probabilities_, self.probabilities_]) #probability of 0 and 1
+            y.append(m_result)
         ### ========== TODO : END ========== ###
         
         return y
@@ -264,19 +270,25 @@ def main():
        
     #========================================
     # train Majority Vote classifier on data
+    '''
     print('Classifying using Majority Vote...')
+
     clf = MajorityVoteClassifier() # create MajorityVote classifier, which includes all model parameters
     clf.fit(X, y)                  # fit training data using the classifier
     y_pred = clf.predict(X)        # take the classifier and run it on the training data
     train_error = 1 - metrics.accuracy_score(y, y_pred, normalize=True)
     print('\t-- training error: %.3f' % train_error)
     
-    
+    '''
     
     ### ========== TODO : START ========== ###
     # part b: evaluate training error of Random classifier
     print('Classifying using Random...')
-    
+    clf = RandomClassifier()  # create MajorityVote classifier, which includes all model parameters
+    clf.fit(X, y)  # fit training data using the classifier
+    y_pred = clf.predict(X)  # take the classifier and run it on the training data
+    train_error = 1 - metrics.accuracy_score(y, y_pred, normalize=True)
+    print('\t-- training error: %.3f' % train_error)
     ### ========== TODO : END ========== ###
     
     

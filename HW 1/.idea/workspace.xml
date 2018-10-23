@@ -14,8 +14,8 @@
       <file leaf-file-name="titanic.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HW 1/src/titanic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="33" column="28" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="28" />
+            <state relative-caret-position="407">
+              <caret line="122" column="8" lean-forward="true" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
               <folding>
                 <element signature="e#112#123#0" expanded="true" />
               </folding>
@@ -26,8 +26,11 @@
       <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HW 1/src/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+            <state relative-caret-position="102">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="e#102#111#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,7 +39,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>randomClassifier</find>
+      <find>Counter</find>
       <find>MajorityVoteClassifier</find>
+      <find>TODO</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -47,9 +53,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="236" />
-    <option name="y" value="396" />
-    <option name="width" value="2226" />
+    <option name="x" value="1793" />
+    <option name="y" value="546" />
+    <option name="width" value="2433" />
     <option name="height" value="1508" />
   </component>
   <component name="ProjectView">
@@ -140,23 +146,23 @@
     <frame x="-6" y="-6" width="1719" height="932" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2770943" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2770943" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.55243117" side_tool="true" visible="true" weight="0.37149817" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.4212068" side_tool="true" weight="0.20097442" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4997071" weight="0.32886723" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.44756883" visible="true" weight="0.37149817" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5787932" visible="true" weight="0.20097442" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49912128" weight="0.32886723" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49853545" weight="0.32886723" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49912128" weight="0.3995128" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -166,7 +172,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/HW 1/src/util.py</url>
           <line>6</line>
         </line-breakpoint>
       </breakpoints>
@@ -188,20 +194,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="7" />
+          <folding>
+            <element signature="e#102#111#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HW 1/src/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#102#111#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HW 1/src/titanic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="33" column="28" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="28" />
+        <state relative-caret-position="407">
+          <caret line="122" column="8" lean-forward="true" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
           <folding>
             <element signature="e#112#123#0" expanded="true" />
           </folding>
