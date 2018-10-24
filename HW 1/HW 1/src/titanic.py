@@ -270,7 +270,7 @@ def main():
        
     #========================================
     # train Majority Vote classifier on data
-    '''
+
     print('Classifying using Majority Vote...')
 
     clf = MajorityVoteClassifier() # create MajorityVote classifier, which includes all model parameters
@@ -279,7 +279,7 @@ def main():
     train_error = 1 - metrics.accuracy_score(y, y_pred, normalize=True)
     print('\t-- training error: %.3f' % train_error)
     
-    '''
+
     
     ### ========== TODO : START ========== ###
     # part b: evaluate training error of Random classifier
@@ -297,7 +297,11 @@ def main():
     # part c: evaluate training error of Decision Tree classifier
     # use criterion of "entropy" for Information gain 
     print('Classifying using Decision Tree...')
-    
+    clf = DecisionTreeClassifier(criterion='entropy')
+    clf.fit(X,y)
+    y_pred = clf.predict(X)
+    train_error = 1 - metrics.accuracy_score(y, y_pred, normalize=True)
+    print('\t-- training error: %.3f' % train_error)
     ### ========== TODO : END ========== ###
 
     
