@@ -231,8 +231,18 @@ def error(clf, X, y, ntrials=100, test_size=0.2) :
     # hint: use train_test_split (be careful of the parameters)
     
     train_error = 0
-    test_error = 0    
-        
+    test_error = 0
+    for i in range (0, ntrials,1):
+        X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = test_size, random_state = ntrials)
+        clf.fit(X_train, y_train)
+        y_pred_train = clf.predict(X_train)
+        y_pred_test = clf.predict(X_test)
+        #accumulate the train_error
+        train_error += 1- metrics.accuracy_score(y_train, y_pred_train, normalize= True)
+        #accumulate the test error
+        test_error += 1-metrics.accuracy_score(y_test, y_pred_test, normalize= True)
+    train_error /= ntrials
+    test_error /=ntrials
     ### ========== TODO : END ========== ###
     
     return train_error, test_error
@@ -307,24 +317,30 @@ def main():
     
 
     # note: uncomment out the following lines to output the Decision Tree graph
-    """
+
     # save the classifier -- requires GraphViz and pydot
+    '''
     import StringIO, pydot
     from sklearn import tree
     dot_data = StringIO.StringIO()
     tree.export_graphviz(clf, out_file=dot_data,
                          feature_names=Xnames)
     graph = pydot.graph_from_dot_data(dot_data.getvalue())
-    graph.write_pdf("dtree.pdf") 
-    """
+    graph.write_pdf("dtree.pdf")
 
+    '''
 
 
     ### ========== TODO : START ========== ###
     # part d: evaluate training error of k-Nearest Neighbors classifier
     # use k = 3, 5, 7 for n_neighbors 
     print('Classifying using k-Nearest Neighbors...')
-    
+    for i in range(3,8,2):
+        clf = KNeighborsClassifier(n_neighbors=i)
+        clf.fit(X,y)
+        y_pred = clf.predict(X)
+        train_error = 1 - metrics.accuracy_score(y, y_pred, normalize=True)
+        print('\t-- training error: %.3f' % train_error)
     ### ========== TODO : END ========== ###
     
     
@@ -332,7 +348,27 @@ def main():
     ### ========== TODO : START ========== ###
     # part e: use cross-validation to compute average training and test error of classifiers
     print('Investigating various classifiers...')
-    
+    #Majority Classifier
+    print('MajorityClassifier part e')
+    clf = MajorityVoteClassifier()
+    train_error, test_error = error(clf,X,y)
+    print('\t-- training error: %.3f, test error: %.3f' %(train_error,test_error))
+
+    print('RandomClassifier part e')
+    clf = RandomClassifier()
+    train_error, test_error = error(clf, X, y)
+    print('\t-- training error: %.3f, test error: %.3f' % (train_error, test_error))
+
+    print('DecisionTreeClassifier part e')
+    clf = DecisionTreeClassifier(criterion='entropy')
+    train_error, test_error = error(clf, X, y)
+    print('\t-- training error: %.3f, test error: %.3f' % (train_error, test_error))
+
+    print('KNeighborsClassifier part e')
+    clf = KNeighborsClassifier(n_neighbors=5)
+    train_error, test_error = error(clf, X, y)
+    print('\t-- training error: %.3f, test error: %.3f' % (train_error, test_error))
+
     ### ========== TODO : END ========== ###
 
 
@@ -340,7 +376,30 @@ def main():
     ### ========== TODO : START ========== ###
     # part f: use 10-fold cross-validation to find the best value of k for k-Nearest Neighbors classifier
     print('Finding the best k for KNeighbors classifier...')
+
+
+    k_neighbor_list = []
+    cross_score_list = []
+    #print(cross_score_list)
+    #k_neigbor_list contains all the odd number from 1 up to 49
+
     
+    for i in range (1,50,2):
+        clf = KNeighborsClassifier(n_neighbors=i)
+        m_temp = cross_val_score(clf, X, y, cv=10)
+        m_mean = 0
+        for elem in m_temp:
+            m_mean += elem
+        m_mean /= len(m_temp)
+        k_neighbor_list.append(i)
+        cross_score_list.append (m_mean)
+
+    plt.xlabel('k-neighbor')
+    plt.ylabel('cross-validation-score')
+    plt.plot(k_neighbor_list,cross_score_list)
+    plt.show()
+
+
     ### ========== TODO : END ========== ###
     
     
